@@ -16,7 +16,8 @@ public class Charizard extends Pokemon {
     }
     
     public String Atacar(Gogoat g){
-        return null;
+        String n="5";
+        return n;
         
     }
     

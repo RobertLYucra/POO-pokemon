@@ -82,10 +82,10 @@ public class jFBatalla extends javax.swing.JFrame {
     public void cambiarNPokemon(){
         jLabel15.setText(jFPokemon.nombreR);
         
-        if(jFCambiarNombrePokemon.jButton2.isSelected()){
+        if(jFCambiarNombrePokemon.jRadioButton2.isSelected()){
             jLabel14.setText(jFPokemon.nombre);
         }
-        else if(jFCambiarNombrePokemon.jButton1.isSelected()){
+        else if(jFCambiarNombrePokemon.jRadioButton1.isSelected()){
             jLabel14.setText(jFCambiarNombrePokemon.Cnombre);
            
         }

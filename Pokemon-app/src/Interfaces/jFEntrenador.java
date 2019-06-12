@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import Atxy2k.CustomTextField.RestrictedTextField;
+import static Interfaces.jFCambiarNombrePokemon.jTextField1;
 import java.net.URL;
 import static javafx.scene.input.KeyCode.R;
 import javax.swing.ImageIcon;
@@ -17,16 +19,22 @@ import javax.swing.JOptionPane;
  */
 public class jFEntrenador extends javax.swing.JFrame {
     private URL url;
-   
+    public static String nombre = "";
+    public static String sexo = "";
     public jFEntrenador() {
         initComponents();
         
         this.setLocationRelativeTo(null);
         jButton1.setEnabled(false);
+        
+        limitarjtxt();
     }
-    public static String nombre = "";
-    public static String sexo = "";
-    
+   
+    public void limitarjtxt(){
+        RestrictedTextField n = new RestrictedTextField(txtNombre);
+        n.setLimit(15);
+        n.setOnlyText(true);
+    }
     
     
     

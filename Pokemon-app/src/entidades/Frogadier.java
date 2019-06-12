@@ -10,9 +10,10 @@ package entidades;
  * @author alumno
  */
 public class Frogadier extends Pokemon {
-    
-    public Frogadier(String nombre, int vida, int nivel) {
-        super(nombre, vida, nivel);
+
+    public Frogadier(String nombre, int dano, int critico) {
+        super(nombre, dano, critico);
     }
+    
     
 }

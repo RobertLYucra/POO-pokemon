@@ -33,7 +33,7 @@ public class jFEntrenador extends javax.swing.JFrame {
     public void limitarjtxt(){
         RestrictedTextField n = new RestrictedTextField(txtNombre);
         n.setLimit(15);
-        n.setOnlyText(true);
+        n.setOnlyAlphaNumeric(true);
     }
     
     

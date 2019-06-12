@@ -10,9 +10,11 @@ package entidades;
  * @author alumno
  */
 public class Gogoat extends Pokemon{
-    
-    public Gogoat(String nombre, int vida, int nivel) {
-        super(nombre, vida, nivel);
+
+    public Gogoat(String nombre, int dano, int critico) {
+        super(nombre, dano, critico);
     }
+    
+    
     
 }

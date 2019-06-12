@@ -63,7 +63,7 @@ public class jFCambiarNombrePokemon extends javax.swing.JFrame {
     public void limitarjtx(){
         RestrictedTextField n = new RestrictedTextField(jTextField1);
         n.setLimit(15);
-        n.setOnlyText(true);
+        n.setOnlyAlphaNumeric(true);
     }
 
     /**

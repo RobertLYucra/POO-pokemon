@@ -3,15 +3,15 @@ package entidades;
 
 
 public class Pokemon {
-    private String nombre;
-    private int vida;
-    private int dano;
-    private int nivel = 5;
-    private int pocion = 15;
-    private int cantPocion = 3;
-    private int probabilidad =20;
-    private int critico = 2;
-    private int evasion = 15;
+    protected String nombre;
+    protected int vida;
+    protected int dano;
+    protected int nivel = 5;
+    protected int pocion = 15;
+    protected int cantPocion = 3;
+    protected int probabilidad =20;
+    protected int critico = 2;
+    protected int evasion = 15;
     
     public Pokemon(String nombre) {
         this.nombre = nombre;
@@ -42,10 +42,10 @@ public class Pokemon {
             }
         }
         else if(at>75){
-            cantPocion = cantPocion -1;
-            if(cantPocion>0){
-                
-                this.vida=this.vida + 15;
+            
+            if(cantPocion<=0){
+                this.cantPocion = this.cantPocion -1;
+                rival.vida=rival.vida + 15;
                 
             }
             else{
@@ -64,8 +64,6 @@ public class Pokemon {
         if (rival.vida<0){
             rival.vida = 0;
         }
-        
-        
         String resultado ="";
         if(at<=75){
             

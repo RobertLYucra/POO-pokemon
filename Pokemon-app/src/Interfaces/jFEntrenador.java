@@ -66,7 +66,6 @@ public class jFEntrenador extends javax.swing.JFrame {
         setTitle("Registrarse datos");
         setLocation(new java.awt.Point(0, 0));
         setMaximizedBounds(new java.awt.Rectangle(700, 400, 400, 400));
-        setMaximumSize(new java.awt.Dimension(650, 400));
         setMinimumSize(new java.awt.Dimension(650, 400));
         setSize(new java.awt.Dimension(603, 358));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -120,7 +119,7 @@ public class jFEntrenador extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(1, 1, 1));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 80, 30));
 
-        jButton3.setFont(new java.awt.Font("Tiger Expert", 0, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton3.setText("Salir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +128,9 @@ public class jFEntrenador extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tiger Expert", 1, 48)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(255, 153, 153));
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 51));
         jLabel4.setText("REGISTRARSE");
         jPanel2.add(jLabel4);
 

@@ -8,7 +8,7 @@ public class Pokemon {
     protected int dano;
     protected int nivel = 5;
     protected int pocion = 15;
-    protected int cantPocion = 3;
+    protected int cantPocion;
     protected int probabilidad =20;
     protected int critico = 2;
     protected int evasion = 15;
@@ -16,13 +16,10 @@ public class Pokemon {
     public Pokemon(String nombre) {
         this.nombre = nombre;
         this.vida = 40 + nivel*5;
+        this.cantPocion = 3;
         this.dano = (int)(Math.random()*5+5); 
         
-        
-        
-        
     }
-    
     
     public String atacar(Pokemon rival){
         
@@ -37,28 +34,20 @@ public class Pokemon {
             if(evad<=evasion){
                 rival.vida = rival.vida;
             }
+            
             else{
                 rival.vida = rival.vida -dano;
             }
         }
         else if(at>75){
             
-            if(cantPocion<=0){
-                this.cantPocion = this.cantPocion -1;
-                rival.vida=rival.vida + 15;
-                
-            }
-            else{
-                if (Cri<=probabilidad){
-                    this.dano = dano*critico;
-                }
-                if(evad<=evasion){
-                    rival.vida = rival.vida;
-                }
-                else{
-                    rival.vida = rival.vida -dano;
-                }
-            }
+            
+            int n =this.vida +pocion;
+            this.cantPocion = this.cantPocion -1;
+            this.vida = n;
+            
+            
+            
         }
         
         if (rival.vida<0){

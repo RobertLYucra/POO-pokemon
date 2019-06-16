@@ -286,7 +286,7 @@ public class jFCambiarNombrePokemon extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese su nombre...");
         }
         else {
-            Cnombre= jTextField1.getText();
+            Cnombre= jTextField1.getText().toUpperCase();
         
             jLabel3.setText(Cnombre);
             jTextField1.setText("");

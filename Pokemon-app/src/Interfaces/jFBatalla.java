@@ -24,9 +24,9 @@ public class jFBatalla extends javax.swing.JFrame {
     private int cant = 3;
     
     //Instanciando...
-    Pokemon charizard = new Pokemon(nombreB);
-    Pokemon frogadier = new Pokemon(nombreB);
-    Pokemon gogoat = new Pokemon(nombreB);
+    Charizard charizard = new Charizard(nombreB);
+    Frogadier frogadier = new Frogadier(nombreB);
+    Gogoat gogoat = new Gogoat(nombreB);
     
     Persona p1 = new Persona("ASH KETCHUM", "MASCULINO");
      
@@ -132,7 +132,7 @@ public class jFBatalla extends javax.swing.JFrame {
         }
         else if (jFPokemon.jRadioButton3.isSelected()){
             frogadier.setNombre(nombreB);
-            gogoat.setNombre(nombreRIval);
+            gogoat.setNombre(nombreRIval); 
             jLabel17.setText(frogadier.MostrarEstado());
             jLabel18.setText(gogoat.MostrarEstado());
         }
@@ -293,7 +293,7 @@ public class jFBatalla extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     
-        int at = (int)(Math.random()*100);
+        int at = (int)(Math.random()*5+5);
 
         if (jFPokemon.jRadioButton1.isSelected()){
 
@@ -303,9 +303,8 @@ public class jFBatalla extends javax.swing.JFrame {
             frogadier.setEvasion(20);
             frogadier.setProbabilidad(20);
             frogadier.setCritico(3);
-
-            String resultado = charizard.atacar(frogadier);
             
+            String resultado = charizard.atacar(frogadier);
             String resultado2 = frogadier.atacar(charizard);
 
             jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
@@ -318,17 +317,82 @@ public class jFBatalla extends javax.swing.JFrame {
             vidaM = charizard.getVida();
             vidaR = frogadier.getVida();
             }
+        
+        //
+        if (jFPokemon.jRadioButton2.isSelected()){
 
+            gogoat.setDano((int)(Math.random()*5+5));
+            charizard.setDano((int)(Math.random()*7+5));
+
+            charizard.setEvasion(20);
+            charizard.setProbabilidad(20);
+            charizard.setCritico(3);
+            
+            String resultado = gogoat.atacar(charizard);
+            String resultado2 = charizard.atacar(gogoat);
+
+            jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
+            jTextArea1.append(p1.getNombre() + ">>>  " +resultado2 + "\n\n");
+
+
+            jLabel17.setText(gogoat.MostrarEstado());
+            jLabel18.setText(charizard.MostrarEstado());
+            
+            vidaM = gogoat.getVida();
+            vidaR = charizard.getVida();
+            }
+
+        if (jFPokemon.jRadioButton1.isSelected()){
+
+            frogadier.setDano((int)(Math.random()*5+5));
+            gogoat.setDano((int)(Math.random()*7+5));
+
+            gogoat.setEvasion(20);
+            gogoat.setProbabilidad(20);
+            gogoat.setCritico(3);
+            
+            String resultado = frogadier.atacar(gogoat);
+            String resultado2 = gogoat.atacar(frogadier);
+
+            jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
+            jTextArea1.append(p1.getNombre() + ">>>  " +resultado2 + "\n\n");
+
+
+            jLabel17.setText(frogadier.MostrarEstado());
+            jLabel18.setText(gogoat.MostrarEstado());
+            
+            vidaM = frogadier.getVida();
+            vidaR = gogoat.getVida();
+            }
         
         //------------------------------------
         if (jFPokemon.jRadioButton1.isSelected()){
             jLabel17.setText(charizard.MostrarEstado());
             jLabel18.setText(frogadier.MostrarEstado());
 
-            String cad = "Cant. Poción: " +charizard.getCantPocion() + "";
+            
             String cad1 = "Cant. Poción: " +frogadier.getCantPocion() + "";
 
-            jLabel19.setText(cad);
+            jLabel20.setText(cad1);
+        }
+        if (jFPokemon.jRadioButton2.isSelected()){
+            jLabel17.setText(gogoat.MostrarEstado());
+            jLabel18.setText(charizard.MostrarEstado());
+
+            
+            String cad1 = "Cant. Poción: " +charizard.getCantPocion() + "";
+
+            
+            jLabel20.setText(cad1);
+        }
+        if (jFPokemon.jRadioButton3.isSelected()){
+            jLabel17.setText(frogadier.MostrarEstado());
+            jLabel18.setText(gogoat.MostrarEstado());
+
+            
+            String cad1 = "Cant. Poción: " +gogoat.getCantPocion() + "";
+
+            
             jLabel20.setText(cad1);
         }
         
@@ -342,7 +406,7 @@ public class jFBatalla extends javax.swing.JFrame {
             if(charizard.getVida() == 0 & frogadier.getVida() == 0){
                 jTextArea1.append(("\tEsto es un empate"));
             }
-            if (charizard.getVida() == 0) {
+            else if (charizard.getVida() == 0) {
                 jTextArea1.append("\n" +charizard.getNombre()
                         + " Ya no puede continuar. "
                         + frogadier.getNombre() + " gana.");
@@ -351,15 +415,65 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton3.setEnabled(false);
             }
         
-            if (frogadier.getVida() == 0) {
+            else if (frogadier.getVida() == 0) {
                 jTextArea1.append("\n"+frogadier.getNombre()
                         + " Ya no puede continuar. "
                         +    charizard.getNombre() + " gana.");
             
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
+                jButton4.setEnabled(false);
             }
             
+        }
+        if (jFPokemon.jRadioButton2.isSelected()){
+            
+            if(charizard.getVida() == 0 & frogadier.getVida() == 0){
+                jTextArea1.append(("\tEsto es un empate"));
+            }
+            else if (charizard.getVida() == 0) {
+                jTextArea1.append("\n" +charizard.getNombre()
+                        + " Ya no puede continuar. "
+                        + frogadier.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+                jButton3.setEnabled(false);
+            }
+        
+            else if (frogadier.getVida() == 0) {
+                jTextArea1.append("\n"+frogadier.getNombre()
+                        + " Ya no puede continuar. "
+                        +    charizard.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+                jButton3.setEnabled(false);
+                jButton4.setEnabled(false);
+            }
+            
+        }
+        if (jFPokemon.jRadioButton3.isSelected()){
+            
+            if(charizard.getVida() == 0 & frogadier.getVida() == 0){
+                jTextArea1.append(("\tEsto es un empate"));
+            }
+            else if (charizard.getVida() == 0) {
+                jTextArea1.append("\n" +charizard.getNombre()
+                        + " Ya no puede continuar. "
+                        + frogadier.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+                jButton3.setEnabled(false);
+            }
+        
+            else if (frogadier.getVida() == 0) {
+                jTextArea1.append("\n"+frogadier.getNombre()
+                        + " Ya no puede continuar. "
+                        +    charizard.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+                jButton3.setEnabled(false);
+                jButton4.setEnabled(false);
+            }
         }
         
     }
@@ -394,14 +508,92 @@ public class jFBatalla extends javax.swing.JFrame {
             cant = cant -1;
             String n1 = cant + "";
             jLabel19.setText("Cant. Poción: " +n1);
-            
             if (cant==0){
                 jButton3.setEnabled(false);
             }
             }
+        
+        
+        if (jFPokemon.jRadioButton2.isSelected()){
+
+            charizard.setDano((int)(Math.random()*7+5));
+
+            charizard.setEvasion(20);
+            charizard.setProbabilidad(20);
+            charizard.setCritico(3);
+            
+            String resultado = "";
+            String resultado2 = "";
+            int n = 0 ;
+            if(cant>0){
+                n =gogoat.getVida()+15 - charizard.getDano();
+                resultado = gogoat.getNombre() + " usó pocion para curación de vida";
+                resultado2 = charizard.atacar(gogoat);
+            }
+            jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
+            jTextArea1.append(p1.getNombre() + ">>>  " +resultado2 + "\n\n");
+
+            jLabel17.setText(gogoat.MostrarEstado());
+            gogoat.setVida(n);
+            
+            cant = cant -1;
+            String n1 = cant + "";
+            jLabel19.setText("Cant. Poción: " +n1);
+            if (cant==0){
+                jButton3.setEnabled(false);
+            }
+            }
+        
+        
+        if (jFPokemon.jRadioButton3.isSelected()){
+
+            gogoat.setDano((int)(Math.random()*7+5));
+
+            gogoat.setEvasion(20);
+            gogoat.setProbabilidad(20);
+            gogoat.setCritico(3);
+            
+            String resultado = "";
+            String resultado2 = "";
+            int n = 0 ;
+            if(cant>0){
+                n =frogadier.getVida()+15 - gogoat.getDano();
+                resultado = frogadier.getNombre() + " usó pocion para curación de vida";
+                resultado2 = gogoat.atacar(frogadier);
+            }
+            jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
+            jTextArea1.append(p1.getNombre() + ">>>  " +resultado2 + "\n\n");
+
+            jLabel17.setText(frogadier.MostrarEstado());
+            charizard.setVida(n);
+            
+            cant = cant -1;
+            String n1 = cant + "";
+            jLabel19.setText("Cant. Poción: " +n1);
+            if (cant==0){
+                jButton3.setEnabled(false);
+            }
+            }
+        //Actualizar Estado------
+        ////------------------------------------------------
         if (jFPokemon.jRadioButton1.isSelected()){
             jLabel17.setText(charizard.MostrarEstado());
             jLabel18.setText(frogadier.MostrarEstado());
+
+            String cad1 = "Cant. Poción: " +frogadier.getCantPocion() + "";
+            jLabel20.setText(cad1);
+        }
+        if (jFPokemon.jRadioButton2.isSelected()){
+            jLabel17.setText(gogoat.MostrarEstado());
+            jLabel18.setText(charizard.MostrarEstado());
+
+            String cad1 = "Cant. Poción: " +gogoat.getCantPocion() + "";
+            jLabel20.setText(cad1);
+        }
+        
+        if (jFPokemon.jRadioButton3.isSelected()){
+            jLabel17.setText(frogadier.MostrarEstado());
+            jLabel18.setText(gogoat.MostrarEstado());
 
             String cad1 = "Cant. Poción: " +frogadier.getCantPocion() + "";
             jLabel20.setText(cad1);

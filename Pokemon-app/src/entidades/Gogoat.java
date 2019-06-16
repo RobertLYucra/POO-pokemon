@@ -9,13 +9,12 @@ package entidades;
  *
  * @author user
  */
-public class Charizard extends Pokemon {
-
-    public Charizard(String nombre) {
+public class Gogoat extends Pokemon{
+    
+    public Gogoat(String nombre) {
         super(nombre);
     }
-    
-     public String atacar(Frogadier rival){
+    public String atacar(Charizard rival){
         
         int Cri = (int)(Math.random()*100);
         int at = (int)(Math.random()*100);
@@ -61,10 +60,5 @@ public class Charizard extends Pokemon {
         
         
         return resultado;
-    }
-    public String MostrarEstado() {
-        String estado = this.nombre + " / " + this.vida 
-                + " HP";
-        return estado;
     }
 }

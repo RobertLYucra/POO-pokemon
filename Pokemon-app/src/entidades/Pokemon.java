@@ -11,7 +11,6 @@ public class Pokemon {
     private int cantPocion = 3;
     private int probabilidad =20;
     private int critico = 2;
-    private int cantpocion;
     private int evasion = 15;
     
     public Pokemon(String nombre) {
@@ -24,18 +23,14 @@ public class Pokemon {
         
     }
     
-    public String MostrarEstado() {
-        String estado = this.nombre + " / " + this.vida 
-                + " HP";
-        return estado;
-    }
+    
     public String atacar(Pokemon rival){
         
         int Cri = (int)(Math.random()*100);
         int at = (int)(Math.random()*100);
         int evad = (int)(Math.random()*100);
         
-        if(at<=70){
+        if(at<=75){
             if (Cri<=probabilidad){
                     this.dano = dano*critico;
             }
@@ -46,10 +41,12 @@ public class Pokemon {
                 rival.vida = rival.vida -dano;
             }
         }
-        else{
+        else if(at>75){
+            cantPocion = cantPocion -1;
             if(cantPocion>0){
-                this.vida=this.vida + pocion;
-                this.cantPocion = cantPocion -1;
+                
+                this.vida=this.vida + 15;
+                
             }
             else{
                 if (Cri<=probabilidad){
@@ -67,28 +64,45 @@ public class Pokemon {
         if (rival.vida<0){
             rival.vida = 0;
         }
-        String resultado ="";
         
-        if(Cri<=probabilidad){
-            resultado =rival.nombre + " recibió un daño crítico de " + this.dano;
-        }
-        else if(Cri>=probabilidad){
-            resultado = rival.nombre + " recibió un daño normal de " + this.dano;
-        }
-        else if(at>70){
-            resultado = this.nombre + " Usó la pocion de curacón";
-        }
-        else if(evad<=evasion){
-            resultado = this.nombre + " evadío el ataque de " + this.dano + "de daño";
+        
+        String resultado ="";
+        if(at<=75){
             
+            if(Cri<=probabilidad){
+                if(evad>evasion){
+                    resultado =this.nombre + " ataco con un daño crítico de " + this.dano + " a " + rival.nombre;
+                }
+                else if(evad<=evasion){
+                    resultado = this.nombre + " atacó con un ataque crítico de " + this.dano +
+                            " pero " + rival.nombre + " evadió";
+                }
+            }
+            else if(Cri>probabilidad){
+                if(evad>evasion){
+                    resultado =this.nombre + " atacó con un daño normal de " + this.dano + " a " + rival.nombre;
+                }
+                else if(evad<=evasion){
+                    resultado = this.nombre + " atacó con un ataque normal de " + this.dano +
+                            " pero " + rival.nombre + " evadió";
+                }
+            }
         }
+            
+        else if(at>75){
+            
+            resultado = this.nombre + " usó la poción de curación";
+        }
+        
         
         return resultado;
     }
-    
-    
-
-    public String getNombre(){
+    public String MostrarEstado() {
+        String estado = this.nombre + " / " + this.vida 
+                + " HP";
+        return estado;
+    }
+        public String getNombre(){
         return nombre;
     }
 
@@ -111,15 +125,12 @@ public class Pokemon {
     public void setDano(int dano) {
         this.dano = dano;
     }
-
     public int getNivel() {
         return nivel;
     }
-
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
-
     public int getPocion() {
         return pocion;
     }
@@ -154,13 +165,7 @@ public class Pokemon {
         this.critico = critico;
     }
 
-    public int getCantpocion() {
-        return cantpocion;
-    }
-
-    public void setCantpocion(int cantpocion) {
-        this.cantpocion = cantpocion;
-    }
+    
 
     public int getEvasion() {
         return evasion;

@@ -18,12 +18,14 @@ public class jFBatalla extends javax.swing.JFrame {
     private URL url;
     private String nombreB ;
     private String nombreRIval;
+    private String entrenador;
     
     //Instanciando...
     Pokemon charizard = new Pokemon(nombreB);
     Pokemon frogadier = new Pokemon(nombreB);
     Pokemon gogoat = new Pokemon(nombreB);
     
+    Persona p1 = new Persona("ASH KETCHUM", "MASCULINO");
      
      
     public jFBatalla() {
@@ -34,7 +36,7 @@ public class jFBatalla extends javax.swing.JFrame {
         Imagen();
         NombreSexo();
                 
-        Persona p1 = new Persona("ASH KETCHUM", "MASCULINO");
+        
         jLabel12.setText(p1.getNombre());
         jLabel13.setText(p1.getSexo());
         
@@ -42,7 +44,11 @@ public class jFBatalla extends javax.swing.JFrame {
         cambiarNPokemon();
         mostrarEstado();
         
+        String cad ="Cant. Poción: " + charizard.getCantPocion() + "";
+        String cad1 = "Cant. Poción: " +frogadier.getCantPocion() + "";
         
+        jLabel19.setText(cad);
+        jLabel20.setText(cad1);
     }
 
     public void Imagen(){
@@ -56,7 +62,7 @@ public class jFBatalla extends javax.swing.JFrame {
         }
     }
     public void NombreSexo(){
-        
+        entrenador = jFEntrenador.nombre;
         jLabel8.setText(jFEntrenador.nombre);
         jLabel9.setText(jFEntrenador.sexo);
         
@@ -160,6 +166,8 @@ public class jFBatalla extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -216,6 +224,7 @@ public class jFBatalla extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 100, 30));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -252,6 +261,12 @@ public class jFBatalla extends javax.swing.JFrame {
         jLabel18.setText("VIDA/HP");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 370, -1, -1));
 
+        jLabel19.setText("jLabel19");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
+
+        jLabel20.setText("jLabel20");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 400, -1, -1));
+
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Estado pokemon.png"))); // NOI18N
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 780));
 
@@ -260,29 +275,95 @@ public class jFBatalla extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     
-    int at = (int)(Math.random()*100);
-    if (jFPokemon.jRadioButton1.isSelected()){
-            
-        
-        frogadier.setDano((int)(Math.random()*7+5));
-        charizard.setDano((int)(Math.random()*5+5));
-        
-        frogadier.setEvasion(20);
-        frogadier.setProbabilidad(20);
-        frogadier.setCritico(3);
-            
-        String resultado = charizard.atacar(frogadier);
-        String resultado2 = frogadier.atacar(charizard);
-            
-        jTextArea1.append(resultado + "y tiene " + frogadier.getVida()+"\n" );
-        jTextArea1.append(resultado2 +" y tiene" + charizard.getVida() + "\n");
-        
+        int at = (int)(Math.random()*100);
+
+        if (jFPokemon.jRadioButton1.isSelected()){
+
+            charizard.setDano((int)(Math.random()*5+5));
+            frogadier.setDano((int)(Math.random()*7+5));
+
+            frogadier.setEvasion(20);
+            frogadier.setProbabilidad(20);
+            frogadier.setCritico(3);
+
+            String resultado = charizard.atacar(frogadier);
+            String resultado2 = frogadier.atacar(charizard);
+
+            jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
+            jTextArea1.append(p1.getNombre() + ">>>  " +resultado2 + "\n\n");
+
+
+            jLabel17.setText(charizard.MostrarEstado());
+            jLabel18.setText(frogadier.MostrarEstado());
+            }
+
+        else if(jFPokemon.jRadioButton2.isSelected()){
+            gogoat.setDano((int)(Math.random()*5+5));
+            charizard.setDano((int)(Math.random()*7+5));
+
+            charizard.setEvasion(20);
+            charizard.setProbabilidad(20);
+            charizard.setCritico(3);
+
+            String resultado = gogoat.atacar(charizard);
+            String resultado2 = charizard.atacar(gogoat);
+
+            jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
+            jTextArea1.append(p1.getNombre() + ">>>  " +resultado2 + "\n\n");
+
+
+            jLabel17.setText(gogoat.MostrarEstado());
+            jLabel18.setText(charizard.MostrarEstado());
         }
-        
-        
-        jLabel17.setText(charizard.MostrarEstado());
-        jLabel18.setText(frogadier.MostrarEstado());
-            
+        else if(jFPokemon.jRadioButton3.isSelected()){
+            frogadier.setDano((int)(Math.random()*5+5));
+            gogoat.setDano((int)(Math.random()*7+5));
+
+            gogoat.setEvasion(20);
+            gogoat.setProbabilidad(20);
+            gogoat.setCritico(3);
+
+            String resultado = frogadier.atacar(gogoat);
+            String resultado2 = gogoat.atacar(frogadier);
+
+            jTextArea1.append(entrenador + ">>>  " + resultado + "\n" );
+            jTextArea1.append(p1.getNombre() + ">>>  " +resultado2 + "\n\n");
+
+
+            jLabel17.setText(gogoat.MostrarEstado());
+            jLabel18.setText(charizard.MostrarEstado());
+        }
+        //------------------------------------
+        if (jFPokemon.jRadioButton1.isSelected()){
+            jLabel17.setText(charizard.MostrarEstado());
+            jLabel18.setText(frogadier.MostrarEstado());
+
+            String cad = "Cant. Poción: " +charizard.getCantPocion() + "";
+            String cad1 = "Cant. Poción: " +frogadier.getCantPocion() + "";
+
+            jLabel19.setText(cad);
+            jLabel20.setText(cad1);
+        }
+        else if(jFPokemon.jRadioButton2.isSelected()){
+            jLabel17.setText(gogoat.MostrarEstado());
+            jLabel18.setText(charizard.MostrarEstado());
+
+            String cad = "Cant. Poción: " +gogoat.getCantPocion() + "";
+            String cad1 = "Cant. Poción: " +charizard.getCantPocion() + "";
+
+            jLabel19.setText(cad);
+            jLabel20.setText(cad1);
+        }
+        else if(jFPokemon.jRadioButton3.isSelected()){
+            jLabel17.setText(frogadier.MostrarEstado());
+            jLabel18.setText(gogoat.MostrarEstado());
+
+            String cad = "Cant. Poción: " +frogadier.getCantPocion() + "";
+            String cad1 = "Cant. Poción: " +gogoat.getCantPocion() + "";
+
+            jLabel19.setText(cad);
+            jLabel20.setText(cad1);
+        }
         analizarEstado();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -290,7 +371,7 @@ public class jFBatalla extends javax.swing.JFrame {
         
         if (jFPokemon.jRadioButton1.isSelected()){
             if (charizard.getVida() == 0) {
-                jTextArea1.append(charizard.getNombre()
+                jTextArea1.append("\n" +charizard.getNombre()
                         + " Ya no puede continuar. "
                         + frogadier.getNombre() + " gana.");
             
@@ -298,9 +379,44 @@ public class jFBatalla extends javax.swing.JFrame {
             }
         
             if (frogadier.getVida() == 0) {
-                jTextArea1.append(frogadier.getNombre()
+                jTextArea1.append("\n"+frogadier.getNombre()
                         + " Ya no puede continuar. "
                         +    charizard.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+            }
+        }
+        if (jFPokemon.jRadioButton2.isSelected()){
+            if (gogoat.getVida() == 0) {
+                jTextArea1.append("\n" +gogoat.getNombre()
+                        + " Ya no puede continuar. "
+                        + charizard.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+            }
+        
+            if (charizard.getVida() == 0) {
+                jTextArea1.append("\n"+charizard.getNombre()
+                        + " Ya no puede continuar. "
+                        +    gogoat.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+            }
+        }
+        
+        if (jFPokemon.jRadioButton3.isSelected()){
+            if (frogadier.getVida() == 0) {
+                jTextArea1.append("\n" +frogadier.getNombre()
+                        + " Ya no puede continuar. "
+                        + gogoat.getNombre() + " gana.");
+            
+                jButton1.setEnabled(false);
+            }
+        
+            if (gogoat.getVida() == 0) {
+                jTextArea1.append("\n"+gogoat.getNombre()
+                        + " Ya no puede continuar. "
+                        +    frogadier.getNombre() + " gana.");
             
                 jButton1.setEnabled(false);
             }
@@ -361,7 +477,9 @@ public class jFBatalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

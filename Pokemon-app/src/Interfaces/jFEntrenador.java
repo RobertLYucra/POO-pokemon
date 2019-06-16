@@ -8,7 +8,6 @@ package Interfaces;
 import Atxy2k.CustomTextField.RestrictedTextField;
 import static Interfaces.jFCambiarNombrePokemon.jTextField1;
 import java.net.URL;
-import static javafx.scene.input.KeyCode.R;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 

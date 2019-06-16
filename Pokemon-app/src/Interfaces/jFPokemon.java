@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Interfaces;
-
+import java.applet.AudioClip;
 /**
  *
  * @author user
@@ -67,7 +67,7 @@ public class jFPokemon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(620, 30, 80, 25);
+        jButton2.setBounds(620, 30, 80, 21);
 
         jButton3.setFont(new java.awt.Font("Tiger Expert", 1, 14)); // NOI18N
         jButton3.setText("REGRESAR");
@@ -77,7 +77,7 @@ public class jFPokemon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(570, 500, 109, 27);
+        jButton3.setBounds(570, 500, 97, 23);
 
         jLabel1.setFont(new java.awt.Font("Tiger Expert", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Charizard.gif"))); // NOI18N
@@ -101,6 +101,11 @@ public class jFPokemon extends javax.swing.JFrame {
                 jRadioButton1ItemStateChanged(evt);
             }
         });
+        jRadioButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton1MouseClicked(evt);
+            }
+        });
         getContentPane().add(jRadioButton1);
         jRadioButton1.setBounds(90, 310, 100, 23);
 
@@ -109,6 +114,11 @@ public class jFPokemon extends javax.swing.JFrame {
         jRadioButton2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jRadioButton2ItemStateChanged(evt);
+            }
+        });
+        jRadioButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton2MouseClicked(evt);
             }
         });
         getContentPane().add(jRadioButton2);
@@ -135,17 +145,17 @@ public class jFPokemon extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if(jRadioButton1.isSelected()){
-                nombre = jRadioButton1.getText();
-                nombreR = jRadioButton3.getText();
+                nombre = jRadioButton1.getText().toUpperCase();
+                nombreR = jRadioButton3.getText().toUpperCase();
             }
         else if(jRadioButton2.isSelected()){
-                nombre = jRadioButton2.getText();
-                nombreR = jRadioButton1.getText();
+                nombre = jRadioButton2.getText().toUpperCase();
+                nombreR = jRadioButton1.getText().toUpperCase();
             }
         
         else if(jRadioButton3.isSelected()){
-                nombre = jRadioButton3.getText();
-                nombreR = jRadioButton2.getText();
+                nombre = jRadioButton3.getText().toUpperCase();
+                nombreR = jRadioButton2.getText().toUpperCase();
             }
         
         
@@ -167,6 +177,8 @@ public class jFPokemon extends javax.swing.JFrame {
 
     private void jRadioButton1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton1ItemStateChanged
         if(jRadioButton1.isSelected()){
+            
+            
             jButton1.setEnabled(true);
             
         }
@@ -184,6 +196,15 @@ public class jFPokemon extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jRadioButton3ItemStateChanged
+
+    private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
+        
+    }//GEN-LAST:event_jRadioButton1MouseClicked
+
+    private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jRadioButton2MouseClicked
 
     /**
      * @param args the command line arguments

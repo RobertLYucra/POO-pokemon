@@ -154,7 +154,7 @@ public class jFEntrenador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese su nombre...");
         }
         else{
-            nombre = txtNombre.getText();
+            nombre = txtNombre.getText().toUpperCase();
             if(jRadioButton1.isSelected()){
                 sexo = jRadioButton1.getText();
             }

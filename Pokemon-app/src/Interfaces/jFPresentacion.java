@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alumno
@@ -35,6 +37,7 @@ public class jFPresentacion extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -61,6 +64,7 @@ public class jFPresentacion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bienvenido");
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -89,10 +93,15 @@ public class jFPresentacion extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 380, 380));
 
+        jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Gimnasio poke.png"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(660, 489));
-        jLabel2.setMinimumSize(new java.awt.Dimension(660, 489));
-        jLabel2.setPreferredSize(new java.awt.Dimension(660, 489));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 489));
 
         pack();
@@ -105,6 +114,16 @@ public class jFPresentacion extends javax.swing.JFrame {
         this.dispose();
         n.setResizable(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String botones []={"Salir", "Cancelar"};
+        int decision = JOptionPane.showOptionDialog(this, "¿Desea salir?", "Titutlo", 0, 0, null, botones, this);
+        if(decision==JOptionPane.YES_OPTION)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,6 +162,7 @@ public class jFPresentacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;

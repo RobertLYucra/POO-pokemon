@@ -90,6 +90,7 @@ public class Pokemon {
         return result;
     }
     
+    
     public String MostrarEstado() {
         String estado = this.nombre + " / " + this.vida 
                 + " HP";

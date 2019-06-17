@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -45,7 +47,6 @@ public class jFPresentarPokemon extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(896, 510));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextArea1.setEditable(false);
@@ -101,8 +102,12 @@ public class jFPresentarPokemon extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
+       String botones []={"Salir", "Cancelar"};
+        int decision = JOptionPane.showOptionDialog(this, "¿Desea salir?", "Titutlo", 0, 0, null, botones, this);
+        if(decision==JOptionPane.YES_OPTION)
+        {
+            System.exit(0);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

@@ -610,7 +610,13 @@ public class jFBatalla extends javax.swing.JFrame {
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        String botones []={"Salir", "Cancelar"};
+        int decision = JOptionPane.showOptionDialog(this, "¿Desea salir?", "Titutlo", 0, 0, null, botones, this);
+        if(decision==JOptionPane.YES_OPTION)
+        {
+            System.exit(0);
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -638,6 +644,7 @@ public class jFBatalla extends javax.swing.JFrame {
             cant1 = cant1 -1;
             String n1 = cant1 + "";
             jLabel19.setText("Cant. Poción: " +n1);
+        
             if (cant1==0){
                 jButton3.setEnabled(false);
             }
@@ -734,6 +741,7 @@ public class jFBatalla extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String botones[]={"Rendirse ","Cancelar"};
+        
         int rendirse = JOptionPane.showOptionDialog(this, "¿Desea rendirse ahora?", "¿Rendirse?", 0, 0, null, botones, this);
         if(rendirse==JOptionPane.YES_OPTION){
         

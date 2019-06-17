@@ -240,8 +240,12 @@ public class jFCambiarNombrePokemon extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
+      String botones []={"Salir", "Cancelar"};
+        int decision = JOptionPane.showOptionDialog(this, "¿Desea salir?", "Titutlo", 0, 0, null, botones, this);
+        if(decision==JOptionPane.YES_OPTION)
+        {
+            System.exit(0);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

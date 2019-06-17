@@ -66,6 +66,7 @@ public class jFEntrenador extends javax.swing.JFrame {
         setLocation(new java.awt.Point(0, 0));
         setMaximizedBounds(new java.awt.Rectangle(700, 400, 400, 400));
         setMinimumSize(new java.awt.Dimension(650, 400));
+        setUndecorated(true);
         setSize(new java.awt.Dimension(603, 358));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -195,7 +196,12 @@ public class jFEntrenador extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+       String botones []={"Salir", "Cancelar"};
+        int decision = JOptionPane.showOptionDialog(this, "¿Desea salir?", "Titutlo", 0, 0, null, botones, this);
+        if(decision==JOptionPane.YES_OPTION)
+        {
+            System.exit(0);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

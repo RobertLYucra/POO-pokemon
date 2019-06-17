@@ -49,7 +49,8 @@ public class jFPokemon extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Tiger Expert", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("SELECCIONAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +60,7 @@ public class jFPokemon extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(280, 430, 141, 37);
 
-        jButton2.setFont(new java.awt.Font("Tiger Expert", 0, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,9 +68,9 @@ public class jFPokemon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(620, 30, 80, 21);
+        jButton2.setBounds(610, 30, 90, 23);
 
-        jButton3.setFont(new java.awt.Font("Tiger Expert", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton3.setText("REGRESAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +78,7 @@ public class jFPokemon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(570, 500, 97, 23);
+        jButton3.setBounds(537, 500, 130, 25);
 
         jLabel1.setFont(new java.awt.Font("Tiger Expert", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Charizard.gif"))); // NOI18N
@@ -94,7 +95,9 @@ public class jFPokemon extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(470, 100, 200, 200);
 
+        jRadioButton1.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton1.setText("CHARIZARD");
         jRadioButton1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -107,9 +110,11 @@ public class jFPokemon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton1);
-        jRadioButton1.setBounds(90, 310, 100, 23);
+        jRadioButton1.setBounds(60, 300, 120, 23);
 
+        jRadioButton2.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton2.setText("GOGOAT");
         jRadioButton2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -122,9 +127,11 @@ public class jFPokemon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton2);
-        jRadioButton2.setBounds(320, 310, 80, 23);
+        jRadioButton2.setBounds(300, 300, 100, 25);
 
+        jRadioButton3.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRadioButton3.setText("FROGADIER");
         jRadioButton3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -132,7 +139,7 @@ public class jFPokemon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton3);
-        jRadioButton3.setBounds(540, 300, 100, 23);
+        jRadioButton3.setBounds(510, 290, 130, 25);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lllll (1).jpg"))); // NOI18N
         getContentPane().add(jLabel5);

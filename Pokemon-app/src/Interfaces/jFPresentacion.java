@@ -89,8 +89,11 @@ public class jFPresentacion extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 380, 380));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/gimnasio4 (1).jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Gimnasio poke.png"))); // NOI18N
+        jLabel2.setMaximumSize(new java.awt.Dimension(660, 489));
+        jLabel2.setMinimumSize(new java.awt.Dimension(660, 489));
+        jLabel2.setPreferredSize(new java.awt.Dimension(660, 489));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 489));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

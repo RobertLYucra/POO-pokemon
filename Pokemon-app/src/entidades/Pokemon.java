@@ -1,14 +1,21 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package entidades;
 
-
+/**
+ *
+ * @author user
+ */
 public class Pokemon {
     protected String nombre;
     protected int vida;
     protected int dano;
     protected int nivel = 5;
     protected int pocion = 15;
-    protected int cantPocion;
+    protected int cantPocion = 3;
     protected int probabilidad =20;
     protected int critico = 2;
     protected int evasion = 15;
@@ -21,69 +28,68 @@ public class Pokemon {
         
     }
     
+    
     public String atacar(Pokemon rival){
-        
         int Cri = (int)(Math.random()*100);
-        int at = (int)(Math.random()*100);
         int evad = (int)(Math.random()*100);
-        
-        if(at<=75){
-            if (Cri<=probabilidad){
-                    this.dano = dano*critico;
-            }
-            if(evad<=evasion){
-                rival.vida = rival.vida;
-            }
-            
-            else{
-                rival.vida = rival.vida -dano;
-            }
+        if (Cri<=probabilidad){
+            this.dano = dano*critico;
         }
-        else if(at>75){
-            
-            
-            int n =this.vida +pocion;
-            this.cantPocion = this.cantPocion -1;
-            this.vida = n;
-            
-            
-            
+        if(evad<=evasion){
+            rival.vida = rival.vida;
+        }
+        else{
+            rival.vida = rival.vida -dano;
         }
         
         if (rival.vida<0){
             rival.vida = 0;
         }
+        
         String resultado ="";
-        if(at<=75){
-            
-            if(Cri<=probabilidad){
-                if(evad>evasion){
-                    resultado =this.nombre + " ataco con un daño crítico de " + this.dano + " a " + rival.nombre;
-                }
-                else if(evad<=evasion){
-                    resultado = this.nombre + " atacó con un ataque crítico de " + this.dano +
+        if(Cri<=probabilidad){
+            if(evad>evasion){
+                resultado =this.nombre + " ataco con un daño crítico de " + this.dano + " a " + rival.nombre;
+             }
+            else if(evad<=evasion){
+                resultado = this.nombre + " atacó con un ataque crítico de " + this.dano +
                             " pero " + rival.nombre + " evadió";
-                }
             }
-            else if(Cri>probabilidad){
-                if(evad>evasion){
-                    resultado =this.nombre + " atacó con un daño normal de " + this.dano + " a " + rival.nombre;
-                }
-                else if(evad<=evasion){
-                    resultado = this.nombre + " atacó con un ataque normal de " + this.dano +
+        }
+        else if(Cri>probabilidad){
+            if(evad>evasion){
+                resultado =this.nombre + " atacó con un daño normal de " + this.dano + " a " + rival.nombre;
+            }
+            else if(evad<=evasion){
+                resultado = this.nombre + " atacó con un ataque normal de " + this.dano +
                             " pero " + rival.nombre + " evadió";
-                }
             }
         }
             
-        else if(at>75){
-            
-            resultado = this.nombre + " usó la poción de curación";
-        }
-        
-        
         return resultado;
     }
+    
+    public String usarPocion(Pokemon pokemon){
+        String result ="";
+        int HP = 0;
+        HP = pokemon.vida +15;
+        pokemon.vida = HP;
+        if (pokemon.vida >=65){
+            pokemon.vida = 65;
+            HP = HP-15;
+            cantPocion = cantPocion -1;
+
+            }
+        
+        if(pokemon.vida >=65){
+            result = pokemon.nombre + " ha usado la pocion de curacion y ahora tiene " + pokemon.vida;
+        }
+        else{
+            result = pokemon.nombre + " ha usado pocion y su vida aumenta en " + HP;
+        }
+        return result;
+    }
+    
     public String MostrarEstado() {
         String estado = this.nombre + " / " + this.vida 
                 + " HP";
@@ -163,10 +169,5 @@ public class Pokemon {
     }
    
     
-    }
     
-    
-    
-    
-    
-
+}

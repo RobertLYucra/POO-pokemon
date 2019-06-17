@@ -48,18 +48,17 @@ public class jFEntrenador extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel2 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,16 +69,8 @@ public class jFEntrenador extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(603, 358));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
-        jLabel2.setText("Nombre:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, -1, -1));
-
         txtNombre.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 228, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
-        jLabel3.setText("Sexo:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, 23));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 228, -1));
 
         jButton1.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
         jButton1.setText("EMPEZAR");
@@ -97,7 +88,7 @@ public class jFEntrenador extends javax.swing.JFrame {
                 jRadioButton1ItemStateChanged(evt);
             }
         });
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 100, -1));
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 100, -1));
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("FEMENINO");
@@ -111,13 +102,18 @@ public class jFEntrenador extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 100, -1));
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 100, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Anonimo.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jPanel1.setForeground(new java.awt.Color(1, 1, 1));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 80, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
+        jLabel3.setText("Sexo:");
+        jPanel1.add(jLabel3);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, 30));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton3.setText("Salir");
@@ -128,18 +124,20 @@ public class jFEntrenador extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
 
+        jPanel3.setForeground(new java.awt.Color(1, 1, 1));
+
+        jLabel2.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
+        jLabel2.setText("Nombre:");
+        jPanel3.add(jLabel2);
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 80, 30));
+
         jLabel4.setBackground(new java.awt.Color(255, 153, 153));
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 153, 51));
         jLabel4.setText("REGISTRARSE");
-        jPanel2.add(jLabel4);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 360, 70));
-
-        jPanel3.setForeground(new java.awt.Color(1, 1, 1));
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 80, 30));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/gimnasio2 (1).jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lugarentre.png"))); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 400));
 
@@ -252,7 +250,6 @@ public class jFEntrenador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     public static javax.swing.JRadioButton jRadioButton1;
     public static javax.swing.JRadioButton jRadioButton2;

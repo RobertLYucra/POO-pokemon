@@ -121,7 +121,7 @@ public class jFCambiarNombrePokemon extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("NOMBRE");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
 
         jButton3.setText("REGRESAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {

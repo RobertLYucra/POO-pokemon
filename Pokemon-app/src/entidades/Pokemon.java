@@ -85,7 +85,7 @@ public class Pokemon {
             result = pokemon.nombre + " ha usado la pocion de curacion y ahora tiene " + pokemon.vida;
         }
         else{
-            result = pokemon.nombre + " ha usado pocion y su vida aumenta en " + HP;
+            result = pokemon.nombre + " ha usado pocion y su vida aumenta a " + HP;
         }
         return result;
     }

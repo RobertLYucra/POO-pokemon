@@ -61,4 +61,14 @@ public class Gogoat extends Pokemon{
         
         return resultado;
     }
+    
+    @Override
+    public int getDano() {
+        return dano;
+    }
+
+    @Override
+    public void setDano(int dano) {
+        this.dano = dano;
+    }
 }

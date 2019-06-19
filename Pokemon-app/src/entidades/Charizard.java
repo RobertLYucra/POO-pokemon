@@ -15,7 +15,8 @@ public class Charizard extends Pokemon {
         super(nombre);
     }
     
-     public String atacar(Frogadier rival){
+    @Override
+     public String atacar(Pokemon rival){
         
         int Cri = (int)(Math.random()*100);
         int at = (int)(Math.random()*100);
@@ -30,9 +31,7 @@ public class Charizard extends Pokemon {
         else{
                 rival.vida = rival.vida -dano;
         }
-        
-      
-        
+     
         if (rival.vida<0){
             rival.vida = 0;
         }
@@ -67,4 +66,16 @@ public class Charizard extends Pokemon {
                 + " HP";
         return estado;
     }
+
+    @Override
+    public int getDano() {
+        return dano;
+    }
+
+    @Override
+    public void setDano(int dano) {
+        this.dano = dano;
+    }
+    
+    
 }

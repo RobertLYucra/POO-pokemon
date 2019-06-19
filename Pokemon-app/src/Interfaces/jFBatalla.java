@@ -534,6 +534,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "Esto es un empape");
             }
             else if (charizard.getVida() == 0) {
                 jTextArea1.append("\n" +charizard.getNombre()
@@ -543,6 +544,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "El ganador es FROGADIER");
             }
         
             else if (frogadier.getVida() == 0) {
@@ -553,6 +555,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "El ganador es CHARIZARD");
             }
             
         }
@@ -560,6 +563,11 @@ public class jFBatalla extends javax.swing.JFrame {
             
             if(gogoat.getVida() == 0 & charizard.getVida() == 0){
                 jTextArea1.append(("\tEsto es un empate"));
+                
+                jButton1.setEnabled(false);
+                jButton3.setEnabled(false);
+                jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "Esto es un empape");
             }
             else if (gogoat.getVida() == 0) {
                 jTextArea1.append("\n" +gogoat.getNombre()
@@ -569,6 +577,8 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "El ganador es CHARIZARD");
+                
             }
         
             else if (charizard.getVida() == 0) {
@@ -579,6 +589,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "EL ganador es GOGOAt");
             }
             
         }
@@ -586,6 +597,12 @@ public class jFBatalla extends javax.swing.JFrame {
             
             if(frogadier.getVida() == 0 & gogoat.getVida() == 0){
                 jTextArea1.append(("\tEsto es un empate"));
+                
+                jButton1.setEnabled(false);
+                jButton3.setEnabled(false);
+                jButton4.setEnabled(false);
+                
+                JOptionPane.showMessageDialog(null, "Esto es un empape");
             }
             else if (frogadier.getVida() == 0) {
                 jTextArea1.append("\n" +frogadier.getNombre()
@@ -595,6 +612,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "EL ganador es GOGOAt");
             }
         
             else if (gogoat.getVida() == 0) {
@@ -605,6 +623,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
+                JOptionPane.showMessageDialog(null, "El ganador es FROGADIER");
             }
         }
         
@@ -655,7 +674,7 @@ public class jFBatalla extends javax.swing.JFrame {
         
         if (jFPokemon.jRadioButton2.isSelected()){
 
-            charizard.setDano((int)(Math.random()*7+5));
+            charizard.setDano((int)(Math.random()*7)+5);
 
             charizard.setEvasion(20);
             charizard.setProbabilidad(20);

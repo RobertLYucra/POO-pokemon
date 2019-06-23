@@ -26,6 +26,7 @@ public class jFEntrenador extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jButton1.setEnabled(false);
         
+        
         limitarjtxt();
     }
    
@@ -167,22 +168,6 @@ public class jFEntrenador extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
-    private void jRadioButton2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton2ItemStateChanged
-        if(jRadioButton2.isSelected()){
-            url = this.getClass().getResource("/Imagenes/EntrenadoraMujer.png");
-            ImageIcon icon = new ImageIcon(url);
-            jLabel1.setIcon(icon);
-            //habilitar boton
-            jButton1.setEnabled(true);
-            
-        }
-        
-    }//GEN-LAST:event_jRadioButton2ItemStateChanged
-
     private void jRadioButton1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton1ItemStateChanged
         if(jRadioButton1.isSelected()){
             url = this.getClass().getResource("/Imagenes/EntrenadorVaron.png");
@@ -203,6 +188,22 @@ public class jFEntrenador extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton2ItemStateChanged
+        if(jRadioButton2.isSelected()){
+            url = this.getClass().getResource("/Imagenes/EntrenadoraMujer.png");
+            ImageIcon icon = new ImageIcon(url);
+            jLabel1.setIcon(icon);
+            //habilitar boton
+            jButton1.setEnabled(true);
+
+        }
+
+    }//GEN-LAST:event_jRadioButton2ItemStateChanged
 
     /**
      * @param args the command line arguments

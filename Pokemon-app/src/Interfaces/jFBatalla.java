@@ -360,7 +360,7 @@ public class jFBatalla extends javax.swing.JFrame {
             if (jFPokemon.jRadioButton3.isSelected()){
 
                 frogadier.setDano((int)(Math.random()*5+5));
-                gogoat.setDano((int)(Math.random()*7+5));
+                gogoat.setDano((int)(Math.random()*5)+7);
 
                 gogoat.setEvasion(20);
                 gogoat.setProbabilidad(20);
@@ -384,7 +384,7 @@ public class jFBatalla extends javax.swing.JFrame {
             if (jFPokemon.jRadioButton1.isSelected()){
                 
                 charizard.setDano((int)(Math.random()*5+5));
-                frogadier.setDano((int)(Math.random()*7+5));
+                frogadier.setDano((int)(Math.random()*5)+7);
                 frogadier.setEvasion(20);
                 frogadier.setProbabilidad(20);
                 frogadier.setCritico(3);
@@ -419,7 +419,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 gogoat.setDano((int)(Math.random()*5+5));
                 
                 //cambiamos atributos;
-                charizard.setDano((int)(Math.random()*7+5));
+                charizard.setDano((int)(Math.random()*5)+7);
                 charizard.setEvasion(20);
                 charizard.setProbabilidad(20);
                 charizard.setCritico(3);
@@ -456,7 +456,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 frogadier.setDano((int)(Math.random()*5+5));
                 
                 //cambiamos atributos;
-                gogoat.setDano((int)(Math.random()*7+5));
+                gogoat.setDano((int)(Math.random()*5)+7);
                 gogoat.setEvasion(20);
                 gogoat.setProbabilidad(20);
                 gogoat.setCritico(3);
@@ -544,7 +544,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
-                JOptionPane.showMessageDialog(null, "El ganador es FROGADIER");
+                JOptionPane.showMessageDialog(null, "El ganador es " +frogadier.getNombre() );
             }
         
             else if (frogadier.getVida() == 0) {
@@ -555,7 +555,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
-                JOptionPane.showMessageDialog(null, "El ganador es CHARIZARD");
+                JOptionPane.showMessageDialog(null, "El ganador es "+charizard.getNombre());
             }
             
         }
@@ -577,7 +577,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
-                JOptionPane.showMessageDialog(null, "El ganador es CHARIZARD");
+                JOptionPane.showMessageDialog(null, "El ganador es " +  charizard.getNombre());
                 
             }
         
@@ -589,7 +589,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
-                JOptionPane.showMessageDialog(null, "EL ganador es GOGOAt");
+                JOptionPane.showMessageDialog(null, "EL ganador es " +  gogoat.getNombre());
             }
             
         }
@@ -612,7 +612,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
-                JOptionPane.showMessageDialog(null, "EL ganador es GOGOAt");
+                JOptionPane.showMessageDialog(null, "EL ganador es "+ gogoat.getNombre());
             }
         
             else if (gogoat.getVida() == 0) {
@@ -623,7 +623,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton1.setEnabled(false);
                 jButton3.setEnabled(false);
                 jButton4.setEnabled(false);
-                JOptionPane.showMessageDialog(null, "El ganador es FROGADIER");
+                JOptionPane.showMessageDialog(null, "El ganador es " + frogadier.getNombre());
             }
         }
         
@@ -642,7 +642,7 @@ public class jFBatalla extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if (jFPokemon.jRadioButton1.isSelected()){
 
-            frogadier.setDano((int)(Math.random()*7+5));
+            frogadier.setDano((int)(Math.random()*5)+7);
 
             frogadier.setEvasion(20);
             frogadier.setProbabilidad(20);
@@ -674,7 +674,7 @@ public class jFBatalla extends javax.swing.JFrame {
         
         if (jFPokemon.jRadioButton2.isSelected()){
 
-            charizard.setDano((int)(Math.random()*7)+5);
+            charizard.setDano((int)(Math.random()*5)+7);
 
             charizard.setEvasion(20);
             charizard.setProbabilidad(20);
@@ -703,7 +703,7 @@ public class jFBatalla extends javax.swing.JFrame {
         
         if (jFPokemon.jRadioButton3.isSelected()){
 
-            gogoat.setDano((int)(Math.random()*7+5));
+            gogoat.setDano((int)(Math.random()*5)+7);
 
             gogoat.setEvasion(20);
             gogoat.setProbabilidad(20);
@@ -744,7 +744,7 @@ public class jFBatalla extends javax.swing.JFrame {
             jLabel17.setText(gogoat.MostrarEstado());
             jLabel18.setText(charizard.MostrarEstado());
 
-            String cad1 = "Cant. Poción: " +gogoat.getCantPocion() + "";
+            String cad1 = "Cant. Poción: " +charizard.getCantPocion() + "";
             jLabel20.setText(cad1);
         }
         

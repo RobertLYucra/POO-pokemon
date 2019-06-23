@@ -55,6 +55,7 @@ public class jFBatalla extends javax.swing.JFrame {
         
         jLabel19.setText(cad);
         jLabel20.setText(cad1);
+        jButton5.setEnabled(false);
     }
 
     public void Imagen(){
@@ -176,6 +177,7 @@ public class jFBatalla extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -266,7 +268,7 @@ public class jFBatalla extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, -1, -1));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -304,6 +306,16 @@ public class jFBatalla extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 420, -1, 30));
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 153));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("JUGAR DE NUEVO");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 660, -1, -1));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Estado pokemon.jpg"))); // NOI18N
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 780));
@@ -531,9 +543,7 @@ public class jFBatalla extends javax.swing.JFrame {
             
             if(charizard.getVida() == 0 & frogadier.getVida() == 0){
                 jTextArea1.append(("\tEsto es un empate"));
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "Esto es un empape");
             }
             else if (charizard.getVida() == 0) {
@@ -541,9 +551,7 @@ public class jFBatalla extends javax.swing.JFrame {
                         + " Ya no puede continuar. "
                         + frogadier.getNombre() + " gana.");
             
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "El ganador es " +frogadier.getNombre() );
             }
         
@@ -552,9 +560,7 @@ public class jFBatalla extends javax.swing.JFrame {
                         + " Ya no puede continuar. "
                         +    charizard.getNombre() + " gana.");
             
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "El ganador es "+charizard.getNombre());
             }
             
@@ -564,9 +570,7 @@ public class jFBatalla extends javax.swing.JFrame {
             if(gogoat.getVida() == 0 & charizard.getVida() == 0){
                 jTextArea1.append(("\tEsto es un empate"));
                 
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "Esto es un empape");
             }
             else if (gogoat.getVida() == 0) {
@@ -574,9 +578,7 @@ public class jFBatalla extends javax.swing.JFrame {
                         + " Ya no puede continuar. "
                         + charizard.getNombre() + " gana.");
             
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "El ganador es " +  charizard.getNombre());
                 
             }
@@ -586,9 +588,7 @@ public class jFBatalla extends javax.swing.JFrame {
                         + " Ya no puede continuar. "
                         +    gogoat.getNombre() + " gana.");
             
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "EL ganador es " +  gogoat.getNombre());
             }
             
@@ -598,9 +598,7 @@ public class jFBatalla extends javax.swing.JFrame {
             if(frogadier.getVida() == 0 & gogoat.getVida() == 0){
                 jTextArea1.append(("\tEsto es un empate"));
                 
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 
                 JOptionPane.showMessageDialog(null, "Esto es un empape");
             }
@@ -609,9 +607,7 @@ public class jFBatalla extends javax.swing.JFrame {
                         + " Ya no puede continuar. "
                         + gogoat.getNombre() + " gana.");
             
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "EL ganador es "+ gogoat.getNombre());
             }
         
@@ -620,13 +616,18 @@ public class jFBatalla extends javax.swing.JFrame {
                         + " Ya no puede continuar. "
                         +    frogadier.getNombre() + " gana.");
             
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
                 JOptionPane.showMessageDialog(null, "El ganador es " + frogadier.getNombre());
             }
         }
         
+    }
+    
+    public void botones(){
+        jButton1.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        jButton5.setEnabled(true);
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -769,25 +770,19 @@ public class jFBatalla extends javax.swing.JFrame {
                 jTextArea1.append(entrenador + " se rindió con su Pokemon " + charizard.getNombre() + "  y el ganador \nes " +
                         p1.getNombre() + " con su Pokemon " + frogadier.getNombre());
 
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
             }
             if(jFPokemon.jRadioButton2.isSelected()){
                 jTextArea1.append(entrenador + " se rindió con su Pokemon " + gogoat.getNombre() + "  y el ganador \nes " +
                         p1.getNombre() + " con su Pokemon " + charizard.getNombre());
 
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
             }
             if(jFPokemon.jRadioButton3.isSelected()){
                 jTextArea1.append(entrenador + " se rindió con su Pokemon " + frogadier.getNombre() + "  y el ganador \nes " +
                         p1.getNombre() + " con su Pokemon " + gogoat.getNombre());
 
-                jButton1.setEnabled(false);
-                jButton3.setEnabled(false);
-                jButton4.setEnabled(false);
+                botones(); //inhablitar botones
             }
         }
         else if (rendirse==JOptionPane.NO_OPTION){
@@ -795,6 +790,18 @@ public class jFBatalla extends javax.swing.JFrame {
         }
             
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        String botones []={"Escoger Pokemon", "Cancelar"};
+        int decision = JOptionPane.showOptionDialog(this, "¿Escoger Pokemon?", "Titutlo", 0, 0, null, botones, this);
+        if(decision==JOptionPane.YES_OPTION)
+        {
+            jFPokemon p = new jFPokemon();
+            p.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     
     /**
@@ -839,6 +846,7 @@ public class jFBatalla extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

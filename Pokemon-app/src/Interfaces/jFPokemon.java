@@ -45,8 +45,8 @@ public class jFPokemon extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(720, 580));
-        setMinimumSize(new java.awt.Dimension(720, 580));
+        setMaximumSize(new java.awt.Dimension(711, 530));
+        setMinimumSize(new java.awt.Dimension(711, 530));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
@@ -183,9 +183,16 @@ public class jFPokemon extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jFEntrenador e = new jFEntrenador();
-        e.setVisible(true);
-        this.dispose();
+        String botones []={"Regresar", "Cancelar"};
+        int decision = JOptionPane.showOptionDialog(this, "¿Desea regresar?", "Titutlo", 0, 0, null, botones, this);
+        if(decision==JOptionPane.YES_OPTION)
+        {
+            jFEntrenador e = new jFEntrenador();
+            e.setVisible(true);
+            this.dispose();
+        }
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jRadioButton1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton1ItemStateChanged

@@ -72,7 +72,7 @@ public class jFEntrenador extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNombre.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 228, -1));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 228, 40));
 
         jButton1.setFont(new java.awt.Font("Tiger Expert", 1, 16)); // NOI18N
         jButton1.setText("EMPEZAR");
@@ -132,7 +132,7 @@ public class jFEntrenador extends javax.swing.JFrame {
         jLabel2.setText("Nombre:");
         jPanel3.add(jLabel2);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 80, 30));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 80, 30));
 
         jLabel4.setBackground(new java.awt.Color(255, 153, 153));
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
